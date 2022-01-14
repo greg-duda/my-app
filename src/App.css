@@ -1,38 +1,234 @@
+#root {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.register-container a:visited {
+  text-decoration: none;
+  color: #EF8354;
+}
 .App {
+
+}
+
+.register-page {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  background-color: #2d3142;
+
+}
+
+.register-container input {
+  width: 70%;
+  height: 30px;
+  background-color: #2d3142;
+  border-radius: 5px;
+  margin: 5px;
+  border: none;
+  padding-left: 10px;
+}
+.register-container input:focus {
+  border: none;
+  background-color: #2d3142;
+  color: whitesmoke;
+}
+.register-container form {
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  padding: 10px;
+}
+
+
+.register-container {
+  grid-template-rows: 1fr 4fr 1fr;
+  row-gap: 20px;
+  width: 25%;
+  height: 60%;
+  background-color: #284b63;
+  align-self: center;
+  display: grid;
+  justify-items: center;
+  padding: 5px;
+  border-radius: 10px;
+}
+.Sidebar {
+  display: grid;
+  height: 99vh;
+  width: 90%;
+  background-color: #2d3142;
+  grid-template-rows: 2fr 4fr 1fr;
+  row-gap: 1%;
+  padding: 5px;
+  border: 1px solid #4f5d75;
+  justify-self: center;
+}
+.user {
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+  padding: 5px;
+  grid-template-rows: 5fr 1fr;
+}
+.image-container {
+  background: #4f5d75;
+}
+.user-name {
+  background-color: #2d3142;
+}
+.Navigation {
+  background-color: #2d3142;
+  display: grid;
+  align-content: center;
+  row-gap: 20px;
+
+}
+#navbtn {
+  height: 50px;
+  background-color: #284b63;
+  color: whitesmoke;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.1s;
+  font-size: 20px;
+}
+#navbtn:hover {
+  background-color: #EF8354;
+  color: #2d3142;
+}
+.settings {
+  display: grid;
+  height: 100%;
+  align-items: center;
+}
+.login-page {
+  display: grid;
+  grid-template-rows:  3fr 1fr;
+  width: 100%;
+  height: 100vh;
+  justify-items: center;
+  background-color: #2d3142;
+}
+.login-page form {
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  display: grid;
+  align-self: center;
+  justify-items: center;
+  background-color: #284b63;
+  height: 50%;
+  padding: 5px;
+  border-radius: 10px;
+  width: 15%;
+  row-gap: 5px;
+}
+.login-page input {
+  width: 70%;
+  height: 40px;
+  background-color: #2d3142;
+  border-radius: 5px;
+  margin: 5px;
+  border: none;
+  padding-left: 10px;
+  align-self: center;
+}
+.login-page input:focus {
+  border: none;
+  background-color: #2d3142;
+  color: whitesmoke;
+}
+.login-page a{
+  text-decoration:none;
+  color: #EF8354;
+}
+tbody {
+  background: cornflowerblue;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+thead {
+  background-color: #284b63;
+  text-align: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.list-page {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  background-color: #2d3142;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.list-container {
+  align-self: center;
+  background-color: #2d3142;
+  justify-self: center;
+}
+tbody img {
+  width: 20px;
+  cursor: pointer;
+}
+.list-nav {
+  width: 100%;
+  height: 50px;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #4f5d75;
 }
-
-.App-link {
-  color: #61dafb;
+.list-nav img {
+  width: 20px;
+  cursor: pointer;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.image-container img {
+  width: 85%;
+  justify-self: center;
+  align-self: center;
+}
+.image-container {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  justify-items: center;
+}
+.user-details-page {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  background-color: #2d3142;
+}
+.user-details-container {
+  height: 30%;
+  width: 50%;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  justify-self: center;
+  background-color: antiquewhite;
+}
+.user-details-image {
+  background-color: #EF8354;
+  height: 70%;
+  padding: 5px;
+}
+.user-details {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+.user-details input {
+  width: 60%;
+  height: 30%;
+  border-radius: 5px;
+  padding-left: 5px;
+  border: 1px solid gray;
+}
+.user-details-image img {
+  width: 100%;
+  height: 100%;
 }
