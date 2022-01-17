@@ -9,9 +9,9 @@ const UserDetails = () => {
     const {id} = useParams()
 const submitHandler = (e) => {
     e.preventDefault()
-    // axios.post(`http://localhost:3002/users/${id}`, {
-    //     photo: `${image}`
-    // })
+    axios.patch(`http://localhost:3002/users/${id}`, {
+        photo: `url`
+    })
     console.log(image)
 }
 
@@ -24,7 +24,7 @@ useEffect(() => {
                 <div className='user-details-image'>
                 <img src={Profile}></img>
                 <div className='details-nav'>
-                    <form>
+                    <form onSubmit={submitHandler}>
                     <input onChange={image} type={'file'}></input>
                     <button type='submit'>Save image</button>
                     </form>

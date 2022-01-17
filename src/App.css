@@ -1,6 +1,5 @@
 #root {
   display: grid;
-  grid-template-columns: 1fr 6fr;
   font-family: 'Roboto Condensed', sans-serif;
 }
 .register-container a:visited {
@@ -8,12 +7,16 @@
   color: #EF8354;
 }
 .App {
-
+display: grid;
+grid-template-columns: 1fr 6fr;
 }
-
+.Navigation-empty img {
+  width: 100%;
+  
+}
 .register-page {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: grid;
   justify-items: center;
   background-color: #2d3142;
@@ -58,12 +61,23 @@
   display: grid;
   height: 99vh;
   width: 90%;
-  background-color: #2d3142;
+  background-color: #284b63;
   grid-template-rows: 2fr 4fr 1fr;
   row-gap: 1%;
   padding: 5px;
-  border: 1px solid #4f5d75;
+  border: 1px solid #2d3142;
   justify-self: center;
+}
+.SidebarEmpty {
+  display: grid;
+  height: 99vh;
+  width: 99%;
+  background-color: #284b63;
+  grid-template-rows: 1fr;
+  padding: 5px;
+  justify-self: center;
+}
+.Navigation-empty {
 }
 .user {
   align-self: center;
@@ -71,18 +85,22 @@
   display: grid;
   width: 100%;
   height: 100%;
-  background-color: gray;
+  background-color: #2d3142;
   padding: 5px;
   grid-template-rows: 5fr 1fr;
 }
 .image-container {
-  background: #4f5d75;
+  background: #2d3142;
 }
 .user-name {
-  background-color: #2d3142;
+  background-color: #284b63;
+  text-align: center;
+  font-size: 20px;
+  line-height: 40px;
+
 }
 .Navigation {
-  background-color: #2d3142;
+  background-color: #284b63;
   display: grid;
   align-content: center;
   row-gap: 20px;
@@ -170,6 +188,12 @@ tbody img {
   width: 20px;
   cursor: pointer;
 }
+td {
+  text-align: left;
+}
+th {
+  cursor: pointer;
+}
 .list-nav {
   width: 100%;
   height: 50px;
@@ -231,4 +255,12 @@ tbody img {
 .user-details-image img {
   width: 100%;
   height: 100%;
+}
+.list-nav select {
+  background-color: #284b63;
+  border-radius: 5px;
+  text-align: center;
+  color: whitesmoke;
+  height: 40px;
+  border: 1px solid black
 }

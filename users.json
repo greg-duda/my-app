@@ -1,0 +1,112 @@
+{
+  "users": [
+    {
+      "name": "marek",
+      "surname": "mostowiak",
+      "email": "marek@wp.pl",
+      "password": "asjdjsadjsad",
+      "photo": "",
+      "isLoggedIn": false,
+      "id": 1
+    },
+    {
+      "name": "doktor",
+      "surname": "queen",
+      "email": "doktor@wp.pl",
+      "password": "queen123",
+      "photo": "",
+      "isLoggedIn": false,
+      "id": 2
+    },
+    {
+      "name": "kain",
+      "surname": "kainowsky",
+      "email": "kain@gmail.com",
+      "password": "asdjsjadsa",
+      "photo": "",
+      "isLoggedIn": false,
+      "id": 3
+    },
+    {
+      "name": "beth",
+      "surname": "smith",
+      "email": "beth@gmail.com",
+      "password": "bethaaaa",
+      "photo": "",
+      "isLoggedIn": false,
+      "id": 4
+    },
+    {
+      "name": "barbara",
+      "surname": "streisand",
+      "email": "streis@wp.pl",
+      "password": "hashdhsadsa",
+      "photo": "",
+      "isLoggedIn": false,
+      "id": 5
+    },
+    {
+      "name": "elmentaler",
+      "surname": "goud",
+      "email": "goudaex@wp.pl",
+      "password": "ajsajjdasd",
+      "photo": "",
+      "isLoggedIn": false,
+      "id": 6
+    },
+    {
+      "name": "velocity",
+      "surname": "raptor",
+      "email": "raptor@gmail.com",
+      "password": "foxxxxy",
+      "photo": "",
+      "isLoggedIn": false,
+      "id": 7
+    },
+    {
+      "name": "maciej",
+      "surname": "couldnt",
+      "email": "couldnt@wp.pl",
+      "password": "maciejk2",
+      "photo": "",
+      "isLoggedIn": false,
+      "id": 8
+    },
+    {
+      "name": "tytus",
+      "surname": "bombs",
+      "email": "kapt@wp.pl",
+      "password": "kapitan123",
+      "photo": "",
+      "isLoggedIn": false,
+      "id": 9
+    },
+    {
+      "name": "modest",
+      "surname": "bomba",
+      "email": "bomab2@wp.pl",
+      "password": "ajsadjasdsa",
+      "photo": "",
+      "isLoggedIn": false,
+      "id": 10
+    },
+    {
+      "name": "harry",
+      "surname": "potter",
+      "email": "henryk@wp.pl",
+      "password": "garncarz123",
+      "photo": "",
+      "isLoggedIn": false,
+      "id": 11
+    },
+    {
+      "name": "greg",
+      "surname": "dud",
+      "email": "greg@wp.pl",
+      "password": "greg123",
+      "photo": "",
+      "isLoggedIn": false,
+      "id": 12
+    }
+  ]
+}

@@ -41,6 +41,7 @@ const Register = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [photo, setPhoto] = useState('')
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
     const navigate = useNavigate()
 
     const submitHandler = (e) => {
@@ -53,7 +54,7 @@ const Register = () => {
         }
         else {
             setError('')
-            const user = { name, surname, email, password, photo}
+            const user = { name, surname, email, password, photo, isLoggedIn}
             axios.post('http://localhost:3002/users', user)
                 .then(navigate('/login'))
 

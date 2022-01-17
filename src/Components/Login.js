@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
 import { Header } from './Register'
@@ -9,10 +9,11 @@ import { Link } from 'react-router-dom'
 
 const Login = () => {
     const [error, setError] = useState('')
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
     const [users, setUsers] = useState([])
     const [emailInput, setEmailInput] = useState('')
     const [passwordInput, setPasswordInput] = useState('')
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         axios.get('http://localhost:3002/users').then((res) => setUsers(res.data))
@@ -21,8 +22,10 @@ const Login = () => {
         e.preventDefault()
         users?.map((item) => {
             if(item.email === emailInput && item.password === passwordInput) {
-                setIsLoggedIn(true)
                 setError('')
+                axios.patch(`http://localhost:3002/users/${item.id}`, {
+                    isLoggedIn: true
+                }).then(navigate('/list'))
             }
             else if(emailInput === '' || passwordInput === '') {
                 setError('Wypełnij puste pola')
@@ -32,7 +35,6 @@ const Login = () => {
             }
             else {setError('Nieprawidłowe dane')}
         })
-        console.log(isLoggedIn, error)
     }
     return (
         <div>
