@@ -7,10 +7,11 @@ import { useNavigate } from 'react-router-dom'
 import Next from '../Images/next.png'
 import Prev from '../Images/prev.png'
 import Profile from '../Images/profile.png'
+import { Header } from './Register'
 
 
 
-const List = () => {
+const List = ({currentUser}) => {
     const [list, setList] = useState([])
     const [change, setChange] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -67,8 +68,9 @@ const List = () => {
     const firstIndex = lastIndex - usersPerPage
     const currentUsers = list?.slice(firstIndex, lastIndex)
     return (
+        
         <div className='list-page'>
-            <div className='list-container'>
+            {currentUser ? <><div className='list-container'>
                 <table>
                     <thead>
                         <tr>
@@ -121,7 +123,8 @@ const List = () => {
 
 
 
-            </div>
+            </div></> : <><Header>You need to <Link to={'/login'}>Sign in</Link> to view a list</Header></>}
+            
         </div>
     )
 }

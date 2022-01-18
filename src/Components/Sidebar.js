@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Profile from '../Images/profile.png'
 import Modal from './Modal'
@@ -7,16 +7,15 @@ import List from '../Images/list.png'
 import Info from '../Images/info.png'
 import User from '../Images/user.png'
 
-const Sidebar = ({currentUser}) => {
+const Sidebar = ({ currentUser, change, setChange }) => {
 
     const [openModal, setOpenModal] = useState(false)
-    
-    
-
-
+    useEffect(() => {
+        console.log(openModal)
+    },[])
     return (
         <>
-            <div className='Sidebar'>
+            {currentUser ? <> <div className='Sidebar'>
                 <div className='user'>
                     <div className='image-container'>
                         <img alt='default-profile' src={Profile}></img>
@@ -31,10 +30,19 @@ const Sidebar = ({currentUser}) => {
                 <div className='settings'>
                     <button onClick={() => setOpenModal(!openModal)} id='navbtn'><img alt='logout' src={Logout}></img>Logout</button>
                 </div>
-                {openModal && <Modal currentUser={currentUser} setOpenModal={setOpenModal} />}
+                {openModal && <Modal change={change} setChange={setChange} currentUser={currentUser} openModal={openModal} setOpenModal={setOpenModal} />}
 
             </div>
-            
+            </> : <><div className='SidebarEmpty'>
+                <div className='Navigation-empty'>
+
+                    <img alt='default-profile' src={Profile}></img>
+                    <h3 style={{ textAlign: 'center' }}>Please <Link to='/login'>Sign in </Link>to see more</h3>
+                </div>
+
+
+            </div> </>}
+
         </>
     )
 }

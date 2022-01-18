@@ -33,7 +33,7 @@ cursor: pointer;
 }
 `
 
-const Register = ({users}) => {
+const Register = ({users, change, setChange}) => {
     const [error, setError] = useState('')
     const [name, setName] = useState('')
     const [surname, setSurname] = useState('')
@@ -55,7 +55,9 @@ const Register = ({users}) => {
             setError('')
             const user = { name, surname, email, password, photo, isLoggedIn}
             axios.post('http://localhost:3002/users', user)
-                .then(navigate('/login'))
+                .then(() => {
+                    setChange(!change)
+                }).then(navigate('/login'))
 
         }
         console.log(error)
@@ -87,7 +89,3 @@ const Register = ({users}) => {
 
 export default Register
 
-        // const user = {name, surname, email, password}
-        // axios.post('http://localhost:3002/users', user)
-        // .then(navigate('/login'))
-        // console.log(error)

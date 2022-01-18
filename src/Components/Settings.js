@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
+import { Header } from './Register'
+import { Link } from 'react-router-dom'
 
 export const Message = styled.h3`
 justify-self: center;
@@ -37,8 +39,7 @@ const Settings = ({currentUser}) => {
 
     return (
         <div className='settings-page'>
-            
-                <form onSubmit={changeHandler} className='settings-container'>
+                {currentUser ? <> <form onSubmit={changeHandler} className='settings-container'>
                 <h4>Old password:</h4>
                 <input disabled={msg === 'Succesfully changed password'} onChange={(e) => setOldPas(e.target.value)} placeholder='Enter old password...' type={'text'}></input>
                 <h4>New password:</h4>
@@ -48,7 +49,8 @@ const Settings = ({currentUser}) => {
                 <button disabled={msg === 'Succesfully changed password'} type='submit'>Change password</button>
                 {msg && msg === 'Succesfully changed password' ? <Message correct>{msg}</Message> : msg && msg !== 'Succesfully changed password' ? <Message>{msg}</Message> : null}
                 </form>
-                
+                </> : <><Header>You need to <Link to={'/login'}>Sign in</Link> to view settings</Header></>}
+               
                 
             
             
