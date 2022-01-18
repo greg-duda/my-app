@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
-import Profile from '../Images/profile.png'
+
 export const Header = styled.h3`
 color: white;
 font-size: 20px;
@@ -33,8 +33,7 @@ cursor: pointer;
 }
 `
 
-const Register = () => {
-    const [users, setUsers] = useState([])
+const Register = ({users}) => {
     const [error, setError] = useState('')
     const [name, setName] = useState('')
     const [surname, setSurname] = useState('')
@@ -62,9 +61,6 @@ const Register = () => {
         console.log(error)
     }
 
-    useEffect(() => {
-        axios.get('http://localhost:3002/users').then((res) => setUsers(res.data))
-    }, [])
     return (
         <div className='register-page'>
             

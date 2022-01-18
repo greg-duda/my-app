@@ -62,7 +62,7 @@ grid-template-columns: 1fr 6fr;
   height: 99vh;
   width: 90%;
   background-color: #284b63;
-  grid-template-rows: 2fr 4fr 1fr;
+  grid-template-rows: 2fr 2fr 1fr;
   row-gap: 1%;
   padding: 5px;
   border: 1px solid #2d3142;
@@ -96,18 +96,19 @@ grid-template-columns: 1fr 6fr;
   background-color: #284b63;
   text-align: center;
   font-size: 20px;
-  line-height: 40px;
+  line-height: 60px;
+  color: whitesmoke;
+  vertical-align: middle;
 
 }
 .Navigation {
   background-color: #284b63;
   display: grid;
-  align-content: center;
-  row-gap: 20px;
+  row-gap: 5px;
 
 }
 #navbtn {
-  height: 50px;
+  height: 100%;
   background-color: #284b63;
   color: whitesmoke;
   width: 100%;
@@ -116,6 +117,7 @@ grid-template-columns: 1fr 6fr;
   cursor: pointer;
   transition: 0.1s;
   font-size: 20px;
+  border: 1px solid #2d3142;
 }
 #navbtn:hover {
   background-color: #EF8354;
@@ -124,8 +126,8 @@ grid-template-columns: 1fr 6fr;
 .settings {
   display: grid;
   height: 100%;
-  align-items: center;
 }
+
 .login-page {
   display: grid;
   grid-template-rows:  3fr 1fr;
@@ -140,12 +142,21 @@ grid-template-columns: 1fr 6fr;
   align-self: center;
   justify-items: center;
   background-color: #284b63;
-  height: 50%;
+  height: 60%;
   padding: 5px;
   border-radius: 10px;
   width: 15%;
   row-gap: 5px;
 }
+.settings img {
+  width: 50px;
+  align-self: flex-start;
+}
+.Navigation img {
+  width: 50px;
+  margin-right: 100%;
+}
+
 .login-page input {
   width: 70%;
   height: 40px;
@@ -168,10 +179,12 @@ grid-template-columns: 1fr 6fr;
 tbody {
   background: cornflowerblue;
   text-align: center;
+  width: 100%;
 }
 thead {
   background-color: #284b63;
   text-align: center;
+  width: 100%;
 }
 .list-page {
   height: 100%;
@@ -190,9 +203,11 @@ tbody img {
 }
 td {
   text-align: left;
+  min-width: 50px;
 }
 th {
   cursor: pointer;
+  text-align: left;
 }
 .list-nav {
   width: 100%;
@@ -231,16 +246,24 @@ th {
   display: grid;
   grid-template-columns: 1fr 3fr;
   justify-self: center;
-  background-color: antiquewhite;
+  background-color: #213e52;
 }
 .user-details-image {
-  background-color: #EF8354;
-  height: 70%;
+  border: 1px solid #213e52;
+  width: 80%;
+  background-color: #2d3142;
+  height: 60%;
+  padding: 5px;
+}
+.details-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #213e52;
   padding: 5px;
 }
 .user-details {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   align-items: center;
@@ -256,6 +279,14 @@ th {
   width: 100%;
   height: 100%;
 }
+.details-nav form {
+  justify-self: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+.details-nav button {
+  width: 100%;
+}
 .list-nav select {
   background-color: #284b63;
   border-radius: 5px;
@@ -263,4 +294,58 @@ th {
   color: whitesmoke;
   height: 40px;
   border: 1px solid black
+}
+.modal-body {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+.modal-container {
+  border: 2px solid crimson;
+  padding: 1px;
+  background-color: #213e52;
+}
+.settings-page {
+  width: 100%;
+  height: 100%;
+  background-color: #2d3142;
+  display: grid;
+}
+.settings-container {
+  padding: 10px;
+  width: 40%;
+  height: 50%;
+  align-self: center;
+  justify-self: center;
+  background-color: #213e52;
+  display: grid;
+  justify-items: center;
+  grid-template-rows:  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  border-radius: 10px;
+}
+.settings-container input {
+  padding-left: 5px;
+  width: 30%;
+  height: 50px;
+  align-self: center;
+  justify-self: center;
+  background-color: #2d3142;
+  border-radius: 5px;
+  border: none;
+  color: whitesmoke;
+}
+.settings-container button {
+  width: 60%;
+  background-color: #284b63;
+  border: none;
+  margin-top: 10px;
+  color: whitesmoke;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.5s;
+
+}
+.settings-container button:hover {
+background-color: whitesmoke;
+color: black;
 }

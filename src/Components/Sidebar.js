@@ -1,38 +1,37 @@
-import axios from 'axios'
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import Profile from '../Images/profile.png'
 import Modal from './Modal'
-import { useNavigate } from 'react-router-dom';
+import Logout from '../Images/logout.png'
+import List from '../Images/list.png'
+import Info from '../Images/info.png'
+import User from '../Images/user.png'
 
-const Sidebar = () => {
-    const navigate = useNavigate()
-    const [users, setUsers] = useState([])
+const Sidebar = ({currentUser}) => {
+
     const [openModal, setOpenModal] = useState(false)
-    const CurrentUser = users?.find((item) => item.isLoggedIn === true)
+    
     
 
-    useEffect(() => {
-        axios.get('http://localhost:3002/users').then((res) => setUsers(res.data))
-    }, [])
+
     return (
         <>
             <div className='Sidebar'>
                 <div className='user'>
                     <div className='image-container'>
-                        <img src={Profile}></img>
+                        <img alt='default-profile' src={Profile}></img>
                     </div>
-                    <div className='user-name'>{CurrentUser?.name.toUpperCase()} {CurrentUser?.surname.toUpperCase()}</div>
+                    <div className='user-name'>{currentUser?.name.toUpperCase()} {currentUser?.surname.toUpperCase()}</div>
                 </div>
                 <div className='Navigation'>
-                    <Link to='/register'><button id='navbtn'>Register</button></Link>
-                    <Link to='/list'><button id='navbtn'>List</button></Link>
-                    <Link to='/settings'><button id='navbtn'>Details</button></Link>
+                    <Link to='/list'><button id='navbtn'><img alt='list' src={List}></img>List</button></Link>
+                    <Link to={`/list/${currentUser?.id}`}><button id='navbtn'><img alt='info' src={Info}></img>Information</button></Link>
+                    <Link to='/settings'><button id='navbtn'><img alt='user' src={User}></img>Settings</button></Link>
                 </div>
                 <div className='settings'>
-                    <button onClick={() => setOpenModal(!openModal)} id='navbtn'>Logout</button>
+                    <button onClick={() => setOpenModal(!openModal)} id='navbtn'><img alt='logout' src={Logout}></img>Logout</button>
                 </div>
-                {openModal && <Modal CurrentUser={CurrentUser} setOpenModal={setOpenModal} />}
+                {openModal && <Modal currentUser={currentUser} setOpenModal={setOpenModal} />}
 
             </div>
             

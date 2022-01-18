@@ -103,10 +103,19 @@
       "name": "greg",
       "surname": "dud",
       "email": "greg@wp.pl",
-      "password": "greg123",
+      "password": "grege",
+      "photo": "",
+      "isLoggedIn": true,
+      "id": 12
+    },
+    {
+      "name": "jozin",
+      "surname": "zbazin",
+      "email": "jozek@wp.pl",
+      "password": "jozek123",
       "photo": "",
       "isLoggedIn": false,
-      "id": 12
+      "id": 13
     }
   ]
 }

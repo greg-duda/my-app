@@ -1,28 +1,44 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import styled from 'styled-components'
 
-const Modal = ({ setOpenModal, CurrentUser }) => {
+const ModalBtn = styled.button `
+width: 80%;
+height: 40px;
+background-color: ${((props) => props.yes ? 'greenyellow' : 'red')};
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: 0.5s;
+&:hover {
+    background-color: whitesmoke;
+    color: #2d3142;
+}
+`
+const ModalTitle = styled.h2 `
+text-align: center;
+`
+const Modal = ({ setOpenModal, currentUser }) => {
     const navigate = useNavigate()
     const logoutHandle = () => {
-        axios.patch(`http://localhost:3002/users/${CurrentUser?.id}`, {
+        axios.patch(`http://localhost:3002/users/${currentUser?.id}`, {
                     isLoggedIn: false
                 }).then(navigate('/login'))
     }
 
     return (
-        <div className='modal-background'>
+        
             <div className='modal-container'>
                 <div className='modal-title'>
-            <h1>Are you sure you want Logout?</h1>
+                <ModalTitle>Are you sure you want to Logout?</ModalTitle>
                 </div>
                 <div className='modal-body'>
-                <button onClick={logoutHandle}>Yes</button>
-                <button onClick={() => setOpenModal(false)}>No</button>
+                <ModalBtn yes onClick={logoutHandle}>Yes</ModalBtn>
+                <ModalBtn onClick={() => setOpenModal(false)}>No</ModalBtn>
                 </div>
             </div>
-            Modal
-        </div>
+    
     )
 }
 
