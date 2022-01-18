@@ -249,7 +249,7 @@ th {
 }
 .user-details-container {
   padding: 10px;
-  height: 50%;
+  height: 40%;
   width: 40%;
   align-self: center;
   justify-self: center;
@@ -285,6 +285,16 @@ justify-items: center;
   display: grid;
   grid-template-rows: 2fr 1fr;
 }
+.user-nav form button {
+ color: whitesmoke;
+ background-color: #284b63;
+}
+.user-nav form input {
+  color: whitesmoke;
+  background-color: #284b63;
+  width: 100%;
+  align-self: center;
+ }
 .user-details button {
   height: 30px;
   background-color: #284b63;
@@ -295,6 +305,7 @@ justify-items: center;
   margin-top: 10px;
   border-radius: 5px;
   border: none;
+  cursor: pointer;
 }
 .user-details input {
   width: 70%;
