@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import Profile from '../Images/profile.png'
@@ -8,6 +8,7 @@ const UserDetails = ({ currentUser }) => {
     const [image, setImage] = useState('')
     const { id } = useParams()
     const [showPas, setShowPas] = useState('password')
+    // const [photo, setPhoto] = useState([])
 
     const Show = () => {
         if(showPas === 'password') {
@@ -16,13 +17,20 @@ const UserDetails = ({ currentUser }) => {
             setShowPas('password')
         }return true
     }
-    const submitHandler = (e) => {
-        e.preventDefault()
-        axios.patch(`http://localhost:3002/users/${id}`, {
-            photo: `url`
-        })
-        console.log(image)
-    }
+    
+    // const submitHandler = (e) => {
+    //     const objectURL = URL.createObjectURL(image)
+    //     e.preventDefault()
+    //     axios.patch(`http://localhost:3002/users/${id}`, {
+    //         photo: `${objectURL}`
+    //     })
+   
+    // }
+    // useEffect(() => {
+    //     axios.get("blob:http://localhost:3000/ae8856a0-6a75-4e16-bcdf-0af06a1468cf").then((res) => {
+    //         setPhoto(res.data)
+    //     }, [])
+    // })
 
     useEffect(() => {
         axios.get(`http://localhost:3002/users/${id}`).then((res) => setUser(res.data))
@@ -32,10 +40,10 @@ const UserDetails = ({ currentUser }) => {
             <div className='user-details-container'>
 
                 <div className='user-nav'>
-                    <form onSubmit={submitHandler}>
+                    <form>
                         <div className='user-image'><img src={Profile}></img></div>
-                        <input onChange={image} type={'file'}></input>
-                        <button type='submit'>Save image</button>
+                        <input  disabled onChange={(e) => setImage(e.target.files[0])} type={'file'}></input>
+                        <button disabled type='submit'>Save image</button>
                     </form></div>
                 <div className='user-details'>
                     <h4>Name: </h4><input disabled value={user?.name} type={'text'}></input>

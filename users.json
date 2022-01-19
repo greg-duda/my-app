@@ -1,4 +1,5 @@
 {
+  "images": [],
   "users": [
     {
       "name": "marek",
@@ -41,7 +42,7 @@
       "surname": "streisand",
       "email": "streis@wp.pl",
       "password": "hashdhsadsa",
-      "photo": "",
+      "photo": "url",
       "isLoggedIn": false,
       "id": 5
     },
@@ -103,9 +104,9 @@
       "name": "greg",
       "surname": "dud",
       "email": "greg@wp.pl",
-      "password": "grege",
+      "password": "greg123",
       "photo": "",
-      "isLoggedIn": true,
+      "isLoggedIn": false,
       "id": 12
     },
     {
@@ -176,9 +177,17 @@
       "surname": "muranski",
       "email": "muran@wp.pl",
       "password": "muranjedziesz",
-      "photo": "",
+      "photo": "stadium.png",
       "isLoggedIn": false,
       "id": 20
+    },
+    {
+      "name": "stasia",
+      "surname": "kowalska",
+      "email": "lalakowa@wp.pl",
+      "password": "kowalski123",
+      "isLoggedIn": false,
+      "id": 21
     }
   ]
 }

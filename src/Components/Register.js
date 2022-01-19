@@ -39,7 +39,7 @@ const Register = ({users, change, setChange}) => {
     const [surname, setSurname] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [photo, setPhoto] = useState('')
+    const [photo, setPhoto] = useState()
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const navigate = useNavigate()
 

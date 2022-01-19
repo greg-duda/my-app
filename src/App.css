@@ -314,6 +314,7 @@ justify-items: center;
   padding-left: 5px;
   text-align: center;
   justify-self: center;
+  color: whitesmoke;
 }
 
 .details-nav button {
