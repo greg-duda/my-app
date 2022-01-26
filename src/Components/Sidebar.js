@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+
 import Profile from '../Images/profile.png'
 import Modal from './Modal'
 import Logout from '../Images/logout.png'
@@ -10,17 +11,17 @@ import User from '../Images/user.png'
 const Sidebar = ({ currentUser, change, setChange }) => {
 
     const [openModal, setOpenModal] = useState(false)
-    useEffect(() => {
-        console.log(openModal)
-    },[])
+
     return (
         <>
-            {currentUser ? <> <div className='Sidebar'>
+            {currentUser ? <> 
+            <div className='Sidebar'>
                 <div className='user'>
-                    <div className='image-container'>
-                        <img alt='default-profile' src={Profile}></img>
-                    </div>
-                    <div className='user-name'>{currentUser?.name.toUpperCase()} {currentUser?.surname.toUpperCase()}</div>
+                        <div className='image-container'>
+                            <img alt='default-profile' src={Profile}></img>
+                        </div>
+                        <div className='user-name'>{currentUser?.name.toUpperCase()} {currentUser?.surname.toUpperCase()}
+                        </div>
                 </div>
                 <div className='Navigation'>
                     <Link to='/list'><button id='navbtn'><img alt='list' src={List}></img>List</button></Link>
@@ -33,15 +34,14 @@ const Sidebar = ({ currentUser, change, setChange }) => {
                 {openModal && <Modal change={change} setChange={setChange} currentUser={currentUser} openModal={openModal} setOpenModal={setOpenModal} />}
 
             </div>
-            </> : <><div className='SidebarEmpty'>
+            </> : <>
+            <div className='SidebarEmpty'>
                 <div className='Navigation-empty'>
-
                     <img alt='default-profile' src={Profile}></img>
                     <h3 style={{ textAlign: 'center' }}>Please <Link to='/login'>Sign in </Link>to see more</h3>
                 </div>
-
-
-            </div> </>}
+            </div> 
+            </>}
 
         </>
     )

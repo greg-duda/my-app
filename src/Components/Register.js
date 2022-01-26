@@ -60,7 +60,6 @@ const Register = ({users, change, setChange}) => {
                 }).then(navigate('/login'))
 
         }
-        console.log(error)
     }
 
     return (
@@ -71,10 +70,10 @@ const Register = ({users, change, setChange}) => {
             <div className='register-container'>
             <Header>Create new account</Header>
                 <form onSubmit={submitHandler}>
-                    <input onChange={(e) => setName(e.target.value.toLowerCase())} required placeholder='Name...' type={'text'}></input>
-                    <input onChange={(e) => setSurname(e.target.value.toLowerCase())} required placeholder='Surname...' type={'text'}></input>
-                    <input onChange={(e) => setEmail(e.target.value.toLowerCase())} required placeholder='Email...' type={'email'}></input>
-                    <input onChange={(e) => setPassword(e.target.value.toLowerCase())} required placeholder='Password...' type={'password'}></input>
+                    <input onChange={(e) => setName(e.target.value.toLowerCase())} required placeholder='Name...' type='text'></input>
+                    <input onChange={(e) => setSurname(e.target.value.toLowerCase())} required placeholder='Surname...' type='text'></input>
+                    <input onChange={(e) => setEmail(e.target.value.toLowerCase())} required placeholder='Email...' type='email'></input>
+                    <input onChange={(e) => setPassword(e.target.value.toLowerCase())} required placeholder='Password...' type='password'></input>
                     <SignBtn onClick={() => console.log(name, surname, email, password)} type='submit'>SIGN UP!</SignBtn>
                     
                 </form>

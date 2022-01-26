@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import Delete from '../Images/delete.png'
-import Editing from '../Images/editing.png'
 import { useNavigate } from 'react-router-dom'
+
 import Next from '../Images/next.png'
 import Prev from '../Images/prev.png'
 import Profile from '../Images/profile.png'
+import Delete from '../Images/delete.png'
+import Editing from '../Images/editing.png'
 import { Header } from './Register'
 
 
@@ -23,12 +24,12 @@ const List = ({currentUser}) => {
     const next = () => {
         if (currentPage !== allPages)
             setCurrentPage(prev => prev + 1)
-        return true
+        
     }
     const prev = () => {
         if (currentPage !== 1)
             setCurrentPage(prev => prev - 1)
-        return true
+        
     }
 
     const filterHandler = (e) => {
@@ -75,7 +76,7 @@ const List = ({currentUser}) => {
                     <thead>
                         <tr>
 
-                            <th><input disabled type={'checkbox'}></input></th>
+                            <th><input disabled type='checkbox'></input></th>
                             <th onClick={byIdHandler}>ID</th>
                             <th onClick={byNameHandler}>First Name</th>
                             <th>Last Name</th>
@@ -91,7 +92,7 @@ const List = ({currentUser}) => {
                             .sort((a, b) => filter === 'id-ascending' ? a.id - b.id : filter === 'id-descending' ? b.id - a.id : true)
                             .sort((a, b) => filter === 'pass-ascending' ? a.password.length - b.password.length : filter === 'pass-descending' ? b.password.length - a.password.length : true)
                             .map((user) => <tr key={user.id}>
-                                <td><input type={'checkbox'}></input></td>
+                                <td><input type='checkbox'></input></td>
                                 <td>{user.id}</td>
                                 <td><Link to={`/list/${user.id}`}><img alt='profile-img' src={Profile}></img> {user.name}</Link></td>
                                 <td>{user.surname}</td>
@@ -100,7 +101,6 @@ const List = ({currentUser}) => {
                                 <td><img alt='delete-button' src={Delete} onClick={() => {
                                     axios.delete(`http://localhost:3002/users/${user.id}`)
                                     setChange(!change)
-                                    console.log(change)
                                 }}></img> <img alt='edit-button'onClick={() => navigate(`/list/${user.id}`)} src={Editing}></img></td>
                             </tr>)}
 

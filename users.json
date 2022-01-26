@@ -188,6 +188,14 @@
       "password": "kowalski123",
       "isLoggedIn": false,
       "id": 21
+    },
+    {
+      "name": "grzegorz",
+      "surname": "duda",
+      "email": "gregor@wp.pl",
+      "password": "gregor123",
+      "isLoggedIn": false,
+      "id": 22
     }
   ]
 }

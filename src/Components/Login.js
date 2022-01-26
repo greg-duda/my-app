@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+
 import { Header } from './Register'
 import { SignBtn } from './Register'
 import { Span } from './Register'
@@ -28,7 +29,6 @@ const Login = ({ users, currentUser, change, setChange }) => {
 
             else { setError('Invalid data') }
         })
-        return true
     }
     return (
         <div>

@@ -34,18 +34,17 @@ const Settings = ({currentUser}) => {
         } else if(newPas !== confirm) {
             setMsg('Your new password must be confirmed')
         }
-        return console.log(currentUser)
     }
 
     return (
         <div className='settings-page'>
                 {currentUser ? <> <form onSubmit={changeHandler} className='settings-container'>
                 <h4>Old password:</h4>
-                <input disabled={msg === 'Succesfully changed password'} onChange={(e) => setOldPas(e.target.value)} placeholder='Enter old password...' type={'text'}></input>
+                <input disabled={msg === 'Succesfully changed password'} onChange={(e) => setOldPas(e.target.value)} placeholder='Enter old password...' type='text'></input>
                 <h4>New password:</h4>
-                <input disabled={msg === 'Succesfully changed password'} onChange={(e) => setNewPas(e.target.value)} placeholder='Enter new password...' type={'text'}></input>
+                <input disabled={msg === 'Succesfully changed password'} onChange={(e) => setNewPas(e.target.value)} placeholder='Enter new password...' type='text'></input>
                 <h4>Confirm new password:</h4>
-                <input disabled={msg === 'Succesfully changed password'} onChange={(e) => setConfirm(e.target.value)} placeholder='Confirm new password...' type={'text'}></input>
+                <input disabled={msg === 'Succesfully changed password'} onChange={(e) => setConfirm(e.target.value)} placeholder='Confirm new password...' type='text'></input>
                 <button disabled={msg === 'Succesfully changed password'} type='submit'>Change password</button>
                 {msg && msg === 'Succesfully changed password' ? <Message correct>{msg}</Message> : msg && msg !== 'Succesfully changed password' ? <Message>{msg}</Message> : null}
                 </form>
